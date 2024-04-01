@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family: 'Transformers';
+            src: url(fonts/Transformers\ Movie.ttf) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Tungsten';
+            src: url(fonts/561f38b1f4570de0fb8a39d691ab058c.ttf) format('truetype');
+            font-weight: bold;
+        }
+
+        /*
+        TIPOS DE FORMAT()
+        -> opentype (otf)
+        -> truetype (ttf)
+        -> embedded-opentype
+        -> trutype-aat (Apple Advanced Typography)
+        -> svg
+        */
+
+        body {
+            font-family: 'Tungsten';
+        }
+
+        h1 {
+            font-family: 'Transformers';
+            font-size: 3em;
+            font-weight: normal;
+        }
+
+    p {
+        font-size: 3em;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo! Eu sou o Optimus Prime!</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus molestias vero corrupti soluta eaque officiis quam itaque hic neque, sapiente pariatur consequatur incidunt quos magnam minus blanditiis placeat earum fuga?</p>
+</body>
+</html>

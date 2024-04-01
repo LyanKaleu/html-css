@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'idroid';
+    src: url(fontes/idroid.otf) format('OpenType');
+    font-weight: bold;
+}
+
+body {
+    background-color: #84E1AD;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cabecalho {
+    background: linear-gradient(#84E1AD, #174F31);
+    color: #FFFFFF;
+    padding: 10px;
+    width: 100%;
+}
+
+#cabecalho h1, p {
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+#menu {
+    display: inline;
+}
+
+#menu a {
+    background-color: #84E1AD;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-right: 10px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+#menu a:hover {
+    background-color: #508567;
+    color: #3cc07a;
+}
+
+.fonte {
+    font-family: 'idroid';
+    color: #3D7556;
+}
+
+.destaque {
+    color: #123b24;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    font-weight: bold;
+}
+
+#conteudo {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 0 100px;
+}
+
+#conteudo p {
+    text-indent: 20px;
+    text-align: justify;
+    text-shadow: 0px 0px 0px;
+}
+
+#conteudo h2 {
+    background: linear-gradient(90deg,#C8ECD8, #FFFFFF);
+}
+
+#conteudo a {
+    text-decoration: none;
+    color: #1A5C38;
+    font-weight: bold;
+}
+
+#conteudo a::after {
+    content: "\1F9F7";
+}
+
+#conteudo a:hover {
+    background-color: #1A5A37;
+    color: #FFFFFF;
+}
+
+footer {
+    background-color: #1A5C38;
+    text-align: center;
+    padding: 1px;
+    color: #FFFFFF;
+}
+
+footer a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-style: normal;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#video {
+    background-color: #1A5C38;
+    text-align: center;
+    padding: 10px;
+}
+
+#lista {
+    background-color: #C5EBD6;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+}
+
+#titulo-tabela {
+    background-color: #2FA866;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 805px;
+    margin-left: -10px;
+    margin-top: -9px;
+    border-radius: 10px 10px 0 0;
+}
+
+ul {
+    list-style-type: "\2714\00a0\00a0";
+    list-style-position: inside;
+    columns: 2;
+    padding: 30px;
+}
