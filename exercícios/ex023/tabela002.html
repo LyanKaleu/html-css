@@ -12,6 +12,7 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
 
         caption {
@@ -27,8 +28,20 @@
         }
 
         thead, tfoot {
-            background-color: gray;
+            background-color: #383838;
             color: white;
+        }
+
+        /* CABEÇALHO FIXO */
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+            background-color: #383838;
+        }
+
+        /* EFEITO ZEBRADO (PSEUDO-CLASSE) */
+        tbody tr:nth-child(even) { /* 2n = DE DUAS EM DUAS / ODD = ÍMPAR / EVEN = PAR */
+            background-color: lightgray;
         }
 
         .numero {
@@ -203,5 +216,12 @@
             </tr>
         </tfoot>
     </table>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto neque consequuntur cum doloremque placeat, doloribus quas numquam aliquid repellendus. Accusamus officia iste dolorum harum reprehenderit saepe facilis laudantium est? Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae eos, corporis saepe accusantium quidem non. Neque maiores voluptatem sit laboriosam tempore, possimus optio illo ab eum, autem aliquid adipisci eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, labore? Voluptate fugiat necessitatibus quam sed, vero at provident consequuntur, velit ipsam sequi non quas consectetur quaerat unde nisi reprehenderit illum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo odit eaque quibusdam velit quam numquam veniam error architecto ab. Pariatur sunt dolorum facilis veritatis dolorem nostrum obcaecati similique alias.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto neque consequuntur cum doloremque placeat, doloribus quas numquam aliquid repellendus. Accusamus officia iste dolorum harum reprehenderit saepe facilis laudantium est? Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae eos, corporis saepe accusantium quidem non. Neque maiores voluptatem sit laboriosam tempore, possimus optio illo ab eum, autem aliquid adipisci eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, labore? Voluptate fugiat necessitatibus quam sed, vero at provident consequuntur, velit ipsam sequi non quas consectetur quaerat unde nisi reprehenderit illum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo odit eaque quibusdam velit quam numquam veniam error architecto ab. Pariatur sunt dolorum facilis veritatis dolorem nostrum obcaecati similique alias.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto neque consequuntur cum doloremque placeat, doloribus quas numquam aliquid repellendus. Accusamus officia iste dolorum harum reprehenderit saepe facilis laudantium est? Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae eos, corporis saepe accusantium quidem non. Neque maiores voluptatem sit laboriosam tempore, possimus optio illo ab eum, autem aliquid adipisci eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, labore? Voluptate fugiat necessitatibus quam sed, vero at provident consequuntur, velit ipsam sequi non quas consectetur quaerat unde nisi reprehenderit illum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo odit eaque quibusdam velit quam numquam veniam error architecto ab. Pariatur sunt dolorum facilis veritatis dolorem nostrum obcaecati similique alias.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto neque consequuntur cum doloremque placeat, doloribus quas numquam aliquid repellendus. Accusamus officia iste dolorum harum reprehenderit saepe facilis laudantium est? Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae eos, corporis saepe accusantium quidem non. Neque maiores voluptatem sit laboriosam tempore, possimus optio illo ab eum, autem aliquid adipisci eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, labore? Voluptate fugiat necessitatibus quam sed, vero at provident consequuntur, velit ipsam sequi non quas consectetur quaerat unde nisi reprehenderit illum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo odit eaque quibusdam velit quam numquam veniam error architecto ab. Pariatur sunt dolorum facilis veritatis dolorem nostrum obcaecati similique alias.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto neque consequuntur cum doloremque placeat, doloribus quas numquam aliquid repellendus. Accusamus officia iste dolorum harum reprehenderit saepe facilis laudantium est? Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae eos, corporis saepe accusantium quidem non. Neque maiores voluptatem sit laboriosam tempore, possimus optio illo ab eum, autem aliquid adipisci eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, labore? Voluptate fugiat necessitatibus quam sed, vero at provident consequuntur, velit ipsam sequi non quas consectetur quaerat unde nisi reprehenderit illum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo odit eaque quibusdam velit quam numquam veniam error architecto ab. Pariatur sunt dolorum facilis veritatis dolorem nostrum obcaecati similique alias.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto neque consequuntur cum doloremque placeat, doloribus quas numquam aliquid repellendus. Accusamus officia iste dolorum harum reprehenderit saepe facilis laudantium est? Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae eos, corporis saepe accusantium quidem non. Neque maiores voluptatem sit laboriosam tempore, possimus optio illo ab eum, autem aliquid adipisci eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, labore? Voluptate fugiat necessitatibus quam sed, vero at provident consequuntur, velit ipsam sequi non quas consectetur quaerat unde nisi reprehenderit illum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo odit eaque quibusdam velit quam numquam veniam error architecto ab. Pariatur sunt dolorum facilis veritatis dolorem nostrum obcaecati similique alias.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto neque consequuntur cum doloremque placeat, doloribus quas numquam aliquid repellendus. Accusamus officia iste dolorum harum reprehenderit saepe facilis laudantium est? Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae eos, corporis saepe accusantium quidem non. Neque maiores voluptatem sit laboriosam tempore, possimus optio illo ab eum, autem aliquid adipisci eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, labore? Voluptate fugiat necessitatibus quam sed, vero at provident consequuntur, velit ipsam sequi non quas consectetur quaerat unde nisi reprehenderit illum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo odit eaque quibusdam velit quam numquam veniam error architecto ab. Pariatur sunt dolorum facilis veritatis dolorem nostrum obcaecati similique alias.</p>
 </body>
 </html>
