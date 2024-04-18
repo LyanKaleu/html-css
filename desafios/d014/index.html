@@ -58,8 +58,8 @@
                 <th rowspan="2" scope="col">Média</th>
             </tr>
             <tr>
-                <th>Nota 1</th>
-                <th>Nota 2</th>
+                <th scope="col">Nota 1</th>
+                <th scope="col">Nota 2</th>
             </tr>
         </thead>
 
@@ -67,57 +67,155 @@
             <tr>
                 <th rowspan="4" class="negrito" scope="rowgroup">Exatas</th>
                 <td>Matemática</td>
-                <td>0.0</td>
-                <td>0.0</td>
-                <td>0.0</td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaMatematica" value="0.0"></td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaMatematica" value="0.0"></td>
+                <td class="mediaMatematica">0.0</td>
             </tr>
 
             <tr>
                 <td>Física</td>
-                <td>0.0</td>
-                <td>0.0</td>
-                <td>0.0</td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaFisica" value="0.0"></td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaFisica" value="0.0"></td>
+                <td class="mediaFisica">0.0</td>
             </tr>
 
             <tr>
                 <td>Química</td>
-                <td>0.0</td>
-                <td>0.0</td>
-                <td>0.0</td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaQuimica" value="0.0"></td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaQuimica" value="0.0"></td>
+                <td class="mediaQuimica">0.0</td>
             </tr>
 
             <tr>
                 <td>Biologia</td>
-                <td>0.0</td>
-                <td>0.0</td>
-                <td>0.0</td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaBiologia" value="0.0"></td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaBiologia" value="0.0"></td>
+                <td class="mediaBiologia">0.0</td>
             </tr>
 
             <tr class="media">
                 <th colspan="4" scope="row">Média de Exatas</th>
-                <td>0.0</td>
+                <td class="mediaExatas">0.0</td>
             </tr>
 
             <tr>
                 <th rowspan="2" class="negrito" scope="rowgroup">Humanas</th>
                 <td>História</td>
-                <td>0.0</td>
-                <td>0.0</td>
-                <td>0.0</td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaHistoria" value="0.0"></td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaHistoria" value="0.0"></td>
+                <td class="mediaHistoria">0.0</td>
             </tr>
 
             <tr>
                 <td>Geografia</td>
-                <td>0.0</td>
-                <td>0.0</td>
-                <td>0.0</td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaGeografia" value="0.0"></td>
+                <td><input type="number" min="0" max="10" step="0.5" class="notaGeografia" value="0.0"></td>
+                <td class="mediaGeografia">0.0</td>
             </tr>
 
             <tr class="media">
                 <th colspan="4" scope="row">Média de Humanas</th>
-                <td>0.0</td>
+                <td class="mediaHumanas">0.0</td>
             </tr>
         </tbody>
     </table>
+
+    <script>
+        // Funções de cálculo da média para todas as disciplinas
+        const calcularMediaMatematica = () => calcularMedia('.mediaMatematica', '.notaMatematica');
+        const calcularMediaFisica = () => calcularMedia('.mediaFisica', '.notaFisica');
+        const calcularMediaQuimica = () => calcularMedia('.mediaQuimica', '.notaQuimica');
+        const calcularMediaBiologia = () => calcularMedia('.mediaBiologia', '.notaBiologia');
+        const calcularMediaHistoria = () => calcularMedia('.mediaHistoria', '.notaHistoria');
+        const calcularMediaGeografia = () => calcularMedia('.mediaGeografia', '.notaGeografia');
+
+        // Seleção dos elementos
+        const mediaMatematica = document.querySelector('.mediaMatematica');
+        const mediaFisica = document.querySelector('.mediaFisica');
+        const mediaQuimica = document.querySelector('.mediaQuimica');
+        const mediaBiologia = document.querySelector('.mediaBiologia');
+        const mediaHistoria = document.querySelector('.mediaHistoria');
+        const mediaGeografia = document.querySelector('.mediaGeografia');
+        const mediaExatas = document.querySelector('.mediaExatas');
+        const mediaHumanas = document.querySelector('.mediaHumanas');
+
+        // Adicionando eventos para cada campo de nota
+        document.querySelectorAll('.notaMatematica').forEach(nota => {
+            nota.addEventListener('input', calcularMediaMatematica);
+            nota.addEventListener('input', limitarNota);
+        });
+
+        document.querySelectorAll('.notaFisica').forEach(nota => {
+            nota.addEventListener('input', calcularMediaFisica);
+            nota.addEventListener('input', limitarNota);
+        });
+
+        document.querySelectorAll('.notaQuimica').forEach(nota => {
+            nota.addEventListener('input', calcularMediaQuimica);
+            nota.addEventListener('input', limitarNota);
+        });
+
+        document.querySelectorAll('.notaBiologia').forEach(nota => {
+            nota.addEventListener('input', calcularMediaBiologia);
+            nota.addEventListener('input', limitarNota);
+        });
+
+        document.querySelectorAll('.notaHistoria').forEach(nota => {
+            nota.addEventListener('input', calcularMediaHistoria);
+            nota.addEventListener('input', limitarNota);
+        });
+
+        document.querySelectorAll('.notaGeografia').forEach(nota => {
+            nota.addEventListener('input', calcularMediaGeografia);
+            nota.addEventListener('input', limitarNota);
+        });
+
+        // Função para limitar o valor da nota entre 0 e 10
+        function limitarNota() {
+            const nota = parseFloat(this.value);
+            if (isNaN(nota) || nota < 0) {
+                this.value = '0.0';
+            } else if (nota > 10) {
+                this.value = '10.0';
+            }
+        }
+
+        // Função para calcular a média de todas as notas de uma disciplina
+        function calcularMedia(mediaClassName, notaClassName) {
+            const notas = document.querySelectorAll(notaClassName);
+            let soma = 0;
+            notas.forEach(nota => {
+                soma += parseFloat(nota.value) || 0;
+            });
+            const media = soma / notas.length;
+            document.querySelector(mediaClassName).textContent = media.toFixed(1);
+
+            if (mediaClassName === '.mediaMatematica' || mediaClassName === '.mediaFisica' || mediaClassName === '.mediaQuimica' || mediaClassName === '.mediaBiologia') {
+                calcularMediaExatas();
+            } else {
+                calcularMediaHumanas();
+            }
+        }
+
+        // Função para calcular a média de todas as disciplinas de Exatas
+        function calcularMediaExatas() {
+            const medias = document.querySelectorAll('.mediaMatematica, .mediaFisica, .mediaQuimica, .mediaBiologia');
+            let soma = 0;
+            medias.forEach(media => {
+                soma += parseFloat(media.textContent);
+            });
+            mediaExatas.textContent = (soma / medias.length).toFixed(1);
+        }
+
+        // Função para calcular a média de todas as disciplinas de Humanas
+        function calcularMediaHumanas() {
+            const medias = document.querySelectorAll('.mediaHistoria, .mediaGeografia');
+            let soma = 0;
+            medias.forEach(media => {
+                soma += parseFloat(media.textContent);
+            });
+            mediaHumanas.textContent = (soma / medias.length).toFixed(1);
+        }
+    </script>
 </body>
 </html>
